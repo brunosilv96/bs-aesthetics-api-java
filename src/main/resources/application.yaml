@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: bs-aesthetics-api
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bs_aesthetics_api
+    username: bs_aesthetics_api_user
+    password: bs_aesthetics_api_pass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
