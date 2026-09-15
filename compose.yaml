@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: bs-aesthetics-api-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: bs_aesthetics_api_user
+      POSTGRES_PASSWORD: bs_aesthetics_api_pass
+      POSTGRES_DB: bs_aesthetics_api
+    ports:
+      - "5432:5432"
+    volumes:
+      - bs_aesthetics_api_pgdata:/var/lib/postgresql
+
+volumes:
+  bs_aesthetics_api_pgdata:
+    name: bs_aesthetics_api_pgdata
