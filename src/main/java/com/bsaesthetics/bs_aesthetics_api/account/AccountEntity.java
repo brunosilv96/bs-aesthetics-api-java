@@ -21,6 +21,7 @@ import jakarta.persistence.Table;
 @Table(name = "account")
 public class AccountEntity {
     @Id
+    @Column(name = "id")
     @ColumnDefault("generate_uuid_v7()")
     @Generated(event = EventType.INSERT)
     private UUID ID;

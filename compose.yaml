@@ -4,9 +4,9 @@ services:
     container_name: bs-aesthetics-api-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: bs_aesthetics_api_user
-      POSTGRES_PASSWORD: bs_aesthetics_api_pass
-      POSTGRES_DB: bs_aesthetics_api
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     ports:
       - "5432:5432"
     volumes:
