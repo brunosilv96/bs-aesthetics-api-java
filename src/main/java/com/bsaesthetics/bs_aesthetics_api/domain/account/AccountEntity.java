@@ -1,4 +1,4 @@
-package com.bsaesthetics.bs_aesthetics_api.account;
+package com.bsaesthetics.bs_aesthetics_api.domain.account;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -43,7 +43,7 @@ public class AccountEntity {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private RoleEnum role;
 
     @CreationTimestamp
     @Column(name = "created_at")
@@ -60,7 +60,7 @@ public class AccountEntity {
     };
 
     public AccountEntity(UUID iD, String name, String email, String password, String phone, LocalDate birthdate,
-            Role role, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt) {
+            RoleEnum role, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt) {
         ID = iD;
         this.name = name;
         this.email = email;
@@ -72,9 +72,44 @@ public class AccountEntity {
         this.updatedAt = updatedAt;
         this.deletedAt = deletedAt;
     }
-}
 
-enum Role {
-    ADMIN,
-    CLIENT
+    public UUID getID() {
+        return ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public LocalDate getBirthdate() {
+        return birthdate;
+    }
+
+    public RoleEnum getRole() {
+        return role;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public LocalDateTime getDeletedAt() {
+        return deletedAt;
+    }
 }

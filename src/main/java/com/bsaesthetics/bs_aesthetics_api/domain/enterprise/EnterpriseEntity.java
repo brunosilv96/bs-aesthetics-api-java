@@ -1,4 +1,4 @@
-package com.bsaesthetics.bs_aesthetics_api.enterprise;
+package com.bsaesthetics.bs_aesthetics_api.domain.enterprise;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;

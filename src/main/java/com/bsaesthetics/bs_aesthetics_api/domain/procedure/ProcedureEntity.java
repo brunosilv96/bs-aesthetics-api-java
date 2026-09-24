@@ -1,4 +1,4 @@
-package com.bsaesthetics.bs_aesthetics_api.procedure;
+package com.bsaesthetics.bs_aesthetics_api.domain.procedure;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -11,7 +11,7 @@ import org.hibernate.annotations.SQLRestriction;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.generator.EventType;
 
-import com.bsaesthetics.bs_aesthetics_api.account.AccountEntity;
+import com.bsaesthetics.bs_aesthetics_api.domain.account.AccountEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

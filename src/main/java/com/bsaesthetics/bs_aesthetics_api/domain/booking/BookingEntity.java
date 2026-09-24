@@ -1,4 +1,4 @@
-package com.bsaesthetics.bs_aesthetics_api.booking;
+package com.bsaesthetics.bs_aesthetics_api.domain.booking;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
