@@ -24,7 +24,7 @@ public class AccountEntity {
     @Column(name = "id")
     @ColumnDefault("generate_uuid_v7()")
     @Generated(event = EventType.INSERT)
-    private UUID ID;
+    private UUID id;
 
     @Column(nullable = false)
     private String name;
@@ -59,22 +59,17 @@ public class AccountEntity {
     public AccountEntity() {
     };
 
-    public AccountEntity(UUID iD, String name, String email, String password, String phone, LocalDate birthdate,
-            RoleEnum role, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime deletedAt) {
-        ID = iD;
+    public AccountEntity(String name, String email, String password, String phone, LocalDate birthdate, RoleEnum role) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.phone = phone;
         this.birthdate = birthdate;
         this.role = role;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.deletedAt = deletedAt;
     }
 
-    public UUID getID() {
-        return ID;
+    public UUID getId() {
+        return id;
     }
 
     public String getName() {

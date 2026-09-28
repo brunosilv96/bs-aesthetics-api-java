@@ -3,10 +3,10 @@ package com.bsaesthetics.bs_aesthetics_api.domain.account.dto;
 import java.time.LocalDate;
 
 import com.bsaesthetics.bs_aesthetics_api.domain.account.RoleEnum;
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -14,26 +14,26 @@ import jakarta.validation.constraints.Size;
 public class RegisterAccountRequest {
     @NotBlank(message = "name is required")
     @Size(max = 50, min = 3, message = "name must have between 3 and 50 characters")
-    String name;
+    public String name;
 
     @NotBlank(message = "email is required")
     @Email(message = "email is invalid")
-    String email;
+    public String email;
 
     @NotBlank(message = "password is required")
     @Size(min = 8, message = "password must have 8 minimum characters")
-    String password;
+    public String password;
 
     @NotBlank(message = "phone is required")
     @Pattern(regexp = "^\\d{10,11}$", message = "phone must have 11 minimum characters")
-    String phone;
+    public String phone;
 
-    @NotBlank(message = "birthdate is required")
+    @NotNull(message = "birthdate is required")
     @Past(message = "the date of birth should be in the previous section")
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    LocalDate birthdate;
+    // @JsonFormat(pattern = "dd/MM/yyyy")
+    public LocalDate birthdate;
 
-    RoleEnum role;
+    public RoleEnum role = RoleEnum.CLIENT;
 
     public RegisterAccountRequest() {
     }

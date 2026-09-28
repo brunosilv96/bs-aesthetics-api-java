@@ -8,18 +8,18 @@ import com.bsaesthetics.bs_aesthetics_api.domain.account.AccountEntity;
 import com.bsaesthetics.bs_aesthetics_api.domain.account.RoleEnum;
 
 public record AccountResponse(
-        UUID ID,
+        UUID id,
         String name,
         String email,
         String phone,
-        LocalDate birthDate,
+        LocalDate birthdate,
         RoleEnum role,
-        LocalDateTime createAt,
+        LocalDateTime createdAt,
         LocalDateTime updatedAt,
         LocalDateTime deletedAt) {
-    public AccountResponse fromEntity(AccountEntity account) {
+    public static AccountResponse fromEntity(AccountEntity account) {
         return new AccountResponse(
-                account.getID(),
+                account.getId(),
                 account.getName(),
                 account.getEmail(),
                 account.getPhone(),
